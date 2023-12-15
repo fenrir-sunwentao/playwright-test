@@ -27,7 +27,7 @@ jobs:
         run: |
           sudo rm -rf /var/www/html/*
           sudo cp -r dist/* /var/www/html/
-          sudo cp your-service.conf /etc/nginx/sites-available/
+          sudo cp your-service.conf /etc/nginx/conf.d/
           sudo systemctl restart nginx
       - name: Run Playwright tests
         run: yarn playwright test
