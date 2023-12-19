@@ -11,10 +11,14 @@ jobs:
       matrix:
         project:
           [
+            "Chrome",
+            "Edge",
+            "Firefox",
             "Safari --workers=2 --shard=1/2",
             "Safari --workers=2 --shard=2/2",
-            '"Mobile Safari" --workers=2 --shard=1/2',
-            '"Mobile Safari" --workers=2 --shard=2/2',
+            "Mobile Chrome",
+            "\"Mobile Safari\" --workers=2 --shard=1/2",
+            "\"Mobile Safari\" --workers=2 --shard=2/2",
           ]
     runs-on: ubuntu-latest
     steps:
