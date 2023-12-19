@@ -17,7 +17,8 @@ jobs:
             "Safari --workers=2 --shard=1/2",
             "Safari --workers=2 --shard=2/2",
             "Mobile Chrome",
-            "Mobile Safari",
+            "\"Mobile Safari\" --workers=2 --shard=1/2",
+            "\"Mobile Safari\" --workers=2 --shard=2/2",
           ]
     runs-on: ubuntu-latest
     steps:
@@ -30,4 +31,4 @@ jobs:
       - name: Install Playwright Browsers
         run: yarn playwright install --with-deps
       - name: Run Playwright tests
-        run: yarn playwright test --project="${{ matrix.project }}"
+        run: yarn playwright test --project=${{ matrix.project }}
